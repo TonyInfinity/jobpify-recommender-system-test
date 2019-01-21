@@ -1,15 +1,15 @@
 <% if !@job.persisted? %>
-  <h4 class="subtitle is-4">Payment</h4>
+  <h4 class="subtitle is-4">Thanh toán</h4>
 
   <div class="notification is-light has-text-centered">
     <i class="fa fa-credit-card"></i>
-    All jobs cost <strong>$300</strong> USD for 30 days.
+    Mọi bài được đăng trên Yayber sẽ tốn <strong>$5</strong> USD cho 30 ngày.
     <span class="block mb4"></span>
   </div>
 
   <div class="form-row">
     <label for="card-element" class="label">
-      Enter credit or debit card
+      Nhập thông tin thẻ tín dụng (credit card) hoặc thẻ ghi nợ (debit card)
     </label>
 
     <div id="card-element" class="form-control">
@@ -21,13 +21,13 @@
 
   <% if current_user.stripe_id.present? %>
     <div class="last-card bg-light pa4 border-radius-3 mt4">
-      <h5 class="is-6 title pt2">Previously used card</h5>
+      <h5 class="is-6 title pt2">Những thẻ đã dùng trước đây</h5>
       <table class="table is-narrow bg-light is-fullwidth">
         <thead>
-          <th>Card Brand</th>
-          <th>Last 4 Digits</th>
-          <th>Expiration Month</th>
-          <th>Expiration Year</th>
+          <th>Loại thẻ:</th>
+          <th>4 số cuối thẻ:</th>
+          <th>Tháng hết hạn:</th>
+          <th>Năm hết hạn:</th>
         </thead>
         <tr>
           <td><%= current_user.card_brand %></td>

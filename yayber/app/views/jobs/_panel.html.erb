@@ -1,17 +1,16 @@
 <nav class="panel" style="padding-top:10px">
-  <p class="panel-heading">Filter by job type:</p>
+  <p class="panel-heading">Lọc nội dung:</p>
  <div class="panel-block">
     <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="search">
+      <input class="input is-small" type="text" placeholder="Tìm kiếm ở đây">
       <span class="icon is-small is-left">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
     </p>
 </div>
-    <%= link_to 'All', jobs_path, class: "panel-block" %>
-
-    <%= link_to 'Full-time', jobs_path(job_type: "Full-time"), class: "panel-block" %>
-    <%= link_to 'Part-time', jobs_path(job_type: "Part-time"), class: "panel-block" %>
-    <%= link_to 'Freelance', jobs_path(job_type: "Freelance"), class: "panel-block" %>
-    <%= link_to 'Contract', jobs_path(job_type: "Contract"), class: "panel-block" %>
+    <%= link_to 'Tất cả', jobs_path, class: "panel-block" %>
+    <%= link_to 'Toàn thời gian', jobs_path(job_type: "Full-time"), class: "panel-block" %>
+    <%= link_to 'Bán thời gian', jobs_path(job_type: "Part-time"), class: "panel-block" %>
+    <%= link_to 'Tự do', jobs_path(job_type: "Freelance"), class: "panel-block" %>
+    <%= link_to 'Hợp đồng', jobs_path(job_type: "Contract"), class: "panel-block" %>
 </nav>

@@ -43,13 +43,13 @@
             </div>
         </div>
 
-        <%= f.button :submit, "Update", class:"button is-primary" %>
+        <%= f.button :submit, "Cập nhật thông tin tài khoản", class:"button is-primary" %>
 
       <% end %>
 
         <hr />
         <h3 class="title is-5">Cancel my account</h3>
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        <p>Unhappy? <%= link_to "Xóa tài khoản của tôi", registration_path(resource_name), data: { confirm: "Bạn có chắc là muốn xóa tài khoản này?" }, method: :delete %></p>
 
       </div>
     </div>

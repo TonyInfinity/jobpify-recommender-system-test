@@ -1,8 +1,9 @@
-<section class="section" style="border:1px dashed #D3D3D3">
+<section class="section" style="border-bottom:1px dashed #D3D3D3">
 	<div class="container">
 		<div class="columns is-centered">
 			<div class="column is-4">
-				<h2 class="title is-2">Log in to Yayber</h2>
+				<h2 class="title is-2">Đăng nhập vào Yayber</h2>
+				<h2 class="subtitle is-4">Cổng kết nối học sinh, sinh viên với các cơ hội việc làm.</h2>
 				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 				  <div class="field">
@@ -23,7 +24,7 @@
 				  	</div>
 					</div>
 
-				  <%= f.button :submit, "Log in", class:"button is-outlined is-medium" %>
+				  <%= f.button :submit, "Đăng nhập", class:"button is-outlined is-medium" %>
 				<% end %>
 				<br/>
 				<%= render "devise/shared/links" %>

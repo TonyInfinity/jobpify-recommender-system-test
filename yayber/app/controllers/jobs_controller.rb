@@ -40,7 +40,7 @@ class JobsController < ApplicationController
     card_last4 = params[:user][:card_last4]
     
     charge = Stripe::Charge.create(
-      :amount => 30000,
+      :amount => 5000,
       :currency => "usd",
       :description => job_type,
       :statement_descriptor => job_title,
@@ -58,7 +58,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Your job listing was purchased successfully!' }
+        format.html { redirect_to @job, notice: 'Bạn đã thanh toán hoàn tất, công việc của bạn sẽ được hiện thị trên trang chủ của Yayber.' }
         format.json { render :show, status: :created, location: @job }
       else
         flash.alert = @job.errrors.full_messages.join(', ')
@@ -77,7 +77,7 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { redirect_to @job, notice: 'Công việc đã cập nhật hoàn tất!' }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit }
@@ -91,7 +91,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to jobs_url, notice: 'Công việc đã xóa hoàn tất!' }
       format.json { head :no_content }
     end
   end
