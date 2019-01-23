@@ -50,7 +50,10 @@
 
       <div class="field">
         <div class="control">
-          <%= f.input :description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" }, label: "Mô tả công việc" %>
+          <!-- <%= f.input :description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" }, label: "Mô tả công việc" %>
+          <trix-editor input="description"></trix-editor> -->
+          <%= f.hidden_field :description, id: :trix_description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" }, label: "Mô tả công việc" %>
+          <trix-editor input="trix_description"></trix-editor>
         </div>
       </div>
 
@@ -93,6 +96,7 @@
 
     <%= render 'payment' %>
 
-    <%= f.button :submit, class: "button is-primary is-large is-rounded mv4" %>
+    <!-- <%= f.button :submit, class: "button is-primary is-large is-rounded mv4" %> -->
+    <%= f.submit "Đăng bài", class: "button is-danger is-large is-rounded mv4" %>
 
 <% end %>

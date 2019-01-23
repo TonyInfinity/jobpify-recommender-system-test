@@ -14,6 +14,7 @@
 
     <div class="content text-serif f4">
       <%= @job.description.html_safe %>
+      <!-- <%= sanitize @job.description.html_safe %> -->
     </div>
 
     <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-large is-fullwidth is-success" %>
@@ -30,7 +31,7 @@
 
     <div class="mt2 mb4">
     <%= link_to @job.url do %>
-      <i class="fa fa-globe"></i>
+      <i class="fa fa-globe"> Đi đến Website</i>
     <% end %>
     </div>
 
@@ -38,13 +39,13 @@
 
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
-        <li class="pv1 f6">Admin controls: </li>
+        <li class="pv1 f6">Quyền của người đăng: </li>
         <li class="pv1 inline-block">
-          <%= link_to 'View', @job, class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'Xem', @job, class: 'button is-small is-outlined' %></li>
         <li class="pv1 inline-block">
-          <%= link_to 'Edit', edit_job_path(@job), class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'Chỉnh sửa', edit_job_path(@job), class: 'button is-small is-outlined' %></li>
         <li class="pv1 inline-block">
-          <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'Xóa', @job, method: :delete, data: { confirm: 'Bạn có chắc là muốn xóa công việc này?' }, class: 'button is-small is-outlined' %></li>
       </ul>
     <% end %>
   </div>
