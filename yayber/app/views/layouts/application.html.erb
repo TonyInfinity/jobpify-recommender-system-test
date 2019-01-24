@@ -21,7 +21,7 @@
       <p class="alert"><%= alert %></p>
     </div>
     <% end %>
-    
+  
      <nav class="navbar" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
@@ -33,6 +33,7 @@
           <span></span>
         </div>
       </div>
+      
       <div id="navbar" class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
@@ -62,6 +63,21 @@
                 </div>
             </div>
               <!-- Dropdown END -->
+              
+            <div class="navbar-end">
+              <div class+"navbar-item">
+                <form class="field has-addons" method="get" action="">
+                  <div class="control">
+                    <input class="input" type="search" placeholder="" name="search">
+                    <!--<%= form_tag jobs_path, :method => 'get' do %>
+                      <%= text_field_tag :search, params[:search] %>
+                      <%= submit_tag "Search", class: "button", :name => nil %>
+                      <% end %>-->
+                  </div>
+                  <div class="control"><button class="button" type="submit">Tìm kiếm</button></div>
+               </form>
+              </div>
+            </div>
                 
             <% if user_signed_in? %>
               <div class="navbar-item has-dropdown is-hoverable">
@@ -86,7 +102,7 @@
   </nav>
 
   <%= yield %>
-
+  
   <footer class="footer" style="bottom:0;width:100%">
     <div class="container">
       <div class="content has-text-centered">

@@ -45,7 +45,6 @@ group :development do
   gem 'spring'
 end
 
-
 gem 'devise'
 gem 'bulma-rails'
 gem 'simple_form'

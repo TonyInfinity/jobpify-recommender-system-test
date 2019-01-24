@@ -10,6 +10,9 @@ class JobsController < ApplicationController
     else
       @jobs = Job.all.order("created_at desc")
     end
+    
+    @search_jobs = Job.search(params[:search])
+    #@search = Job.where(['title LIKE ?', "%#{params[:search]}%"])
   end
 
   # GET /jobs/1
