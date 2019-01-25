@@ -1,20 +1,17 @@
-
 <%= simple_form_for @job, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<div class="box">
 <div class="field">
         <div class="control">
         <%= f.input :title, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Tên công việc", placeholder: "" %>
         </div>
       </div>
-
       <div class="field">
         <div class="control">
           <%= f.input :apply_url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "URL đăng ký công việc", placeholder: ""  %>
         </div>
       </div>
-
     <div class="columns">
       <div class="field column is-4">
         <div class="control">
@@ -29,14 +26,12 @@
           </div>
         </div>
       </div>
-
       <div class="column">
         <div class="field">
           <div class="control">
             <%= f.input :location, require: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Nơi làm việc", placeholder: "", hint: 'Ví dụ: "Vĩnh Châu, Sóc Trăng", "Không có chỗ làm cố định", "..."' %>
           </div>
         </div>
-
         <div class="field">
           <div class="control">
             <label for="job[remote_ok]">
@@ -47,7 +42,6 @@
         </div>
       </div>
     </div>
-
       <div class="field">
         <div class="control">
           <!-- <%= f.input :description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" }, label: "Mô tả công việc" %>
@@ -56,22 +50,18 @@
           <trix-editor input="trix_description"></trix-editor>
         </div>
       </div>
-
-
     <div class="columns">
       <div class="field column">
         <div class="control">
           <%= f.input :job_author, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Tên công ty, doanh nghiệp, người đăng" %>
         </div>
       </div>
-
       <div class="field column">
         <div class="control">
           <%= f.input :url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Trang web, trang mạng xã hội", placeholder: "http://công-ty.com, http://www.fb.com/vidu" %>
         </div>
       </div>
     </div>
-
     <div class="columns">
       <div class="field column is-4">
         <div class="control">
@@ -91,12 +81,9 @@
         <output id="list"></output>
       </div>
     </div>
-
     <hr />
-
     <%= render 'payment' %>
-
     <!-- <%= f.button :submit, class: "button is-primary is-large is-rounded mv4" %> -->
     <%= f.submit "Đăng bài", class: "button is-danger is-large is-rounded mv4" %>
-
 <% end %>
+</div>

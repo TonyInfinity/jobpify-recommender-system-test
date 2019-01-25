@@ -22,7 +22,7 @@
     </div>
     <% end %>
   
-     <nav class="navbar" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
+     <nav class="navbar has-background-white-bis" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
@@ -35,13 +35,8 @@
       </div>
       
       <div id="navbar" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-                 <p class="control">
-                <%= link_to "Đăng việc mới", new_job_path, class: "navbar-item button is-rounded" %>
-                </p>
-                <!-- Dropdown START -->
+        <div class="navbar-start">
+          <!-- Dropdown START -->
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                   Docs
@@ -63,9 +58,10 @@
                 </div>
             </div>
               <!-- Dropdown END -->
-              
-            <div class="navbar-end">
-              <div class+"navbar-item">
+              <a class="navbar-item" href="/jobs">
+                Tìm việc làm
+              </a>
+              <div class="navbar-item">
                 <form class="field has-addons" method="get" action="">
                   <div class="control">
                     <input class="input" type="search" placeholder="" name="search">
@@ -77,40 +73,79 @@
                   <div class="control"><button class="button" type="submit">Tìm kiếm</button></div>
                </form>
               </div>
-            </div>
-                
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+              <p class="control">
+                <%= link_to "Đăng việc mới", new_job_path, class: "navbar-item button is-rounded" %>
+              </p>
+          </div>
             <% if user_signed_in? %>
               <div class="navbar-item has-dropdown is-hoverable">
-                <%= link_to 'Tài khoản', edit_user_registration_path, class: "navbar-link" %>
-                <div class="navbar-dropdown is-right">
+                <!--<%= link_to 'Tài khoản', edit_user_registration_path, class: "navbar-link" %>-->
+                <a class="navbar-link">Tài khoản</a>
+                <div class="navbar-dropdown">
                   <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class:"navbar-item" %>
                 </div>
               </div>
             <% else %>
             <p class="control">
-              <%= link_to "Đăng nhập", new_user_session_path, class:"navbar-item button" %>
+              <%= link_to "Đăng nhập", new_user_session_path, class:"navbar-item" %>
             </p>
             <p class="control">
-              <%= link_to "Đăng ký", new_user_registration_path, class:"navbar-item button"%>
+              <%= link_to "Đăng ký", new_user_registration_path, class:"navbar-item" %>
             </p>
             <% end %>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
-
   <%= yield %>
-  
-  <footer class="footer" style="bottom:0;width:100%">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-        © 2019-2020 Yayber All Rights Reserved
-        </p>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer has-background-white-bis">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-3 is-offset-2">
+                        <h2><strong>Category</strong></h2>
+                        <ul>
+                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                            <li><a href="#">Vestibulum errato isse</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                            <li><a href="#">Aisia caisia</a></li>
+                            <li><a href="#">Murphy's law</a></li>
+                            <li><a href="#">Flimsy Lavenrock</a></li>
+                            <li><a href="#">Maven Mousie Lavender</a></li>
+                        </ul>
+                    </div>
+                    <div class="column is-3">
+                        <h2><strong>Category</strong></h2>
+                        <ul>
+                            <li><a href="#">Labore et dolore magna aliqua</a></li>
+                            <li><a href="#">Kanban airis sum eschelor</a></li>
+                            <li><a href="#">Modular modern free</a></li>
+                            <li><a href="#">The king of clubs</a></li>
+                            <li><a href="#">The Discovery Dissipation</a></li>
+                            <li><a href="#">Course Correction</a></li>
+                            <li><a href="#">Better Angels</a></li>
+                        </ul>
+                    </div>
+                    <div class="column is-4">
+                        <h2><strong>Category</strong></h2>
+                        <ul>
+                            <li><a href="#">Objects in space</a></li>
+                            <li><a href="#">Playing cards with coyote</a></li>
+                            <li><a href="#">Goodbye Yellow Brick Road</a></li>
+                            <li><a href="#">The Garden of Forking Paths</a></li>
+                            <li><a href="#">Future Shock</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content has-text-centered">
+                  <p>
+                    © 2019-2020 Yayber All Rights Reserved
+                    </p>
+                </div>
+            </div>
+            <script src="../js/bulma.js"></script>
+        </footer>
   </body>
 </html>
