@@ -1,4 +1,4 @@
-<div class="columns pt4 pb7">
+<div class="columns pt4 pb7 has-background-white-bis">
   <div class="column is-7 is-offset-1">
     
     <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</p>
@@ -24,7 +24,7 @@
       <%= link_to image_tag(@job.avatar_url(:thumb), alt: @job.job_author, class: "has-text-centered"), @job.url %>
     <% end %>
 
-    <h5 class="is-5 has-text-centered"><%= link_to @job.job_author, @job.url %></h5>
+    <h5 class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></h5>
 
     <div class="mt2 mb4">
     <%= link_to @job.url do %>
@@ -32,7 +32,7 @@
     <% end %>
     </div>
 
-    <%= link_to 'Nộp đơn', @job.apply_url, class:"button is-rounded is-fullwidth is-success" %>
+    <%= link_to 'Nộp đơn', @job.apply_url, class:"button is-rounded is-fullwidth" %>
 
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">

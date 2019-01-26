@@ -22,8 +22,9 @@
     </div>
     <% end %>
   
-     <nav class="navbar has-background-white-bis" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
+     <nav class="navbar has-background-white-ter" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
       <div class="navbar-brand">
+        <!--
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
         <% end  %>
@@ -31,7 +32,39 @@
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div>-->
+        <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to root_path, class: "navbar-link" do %>
+              <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
+            <% end %>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <p>
+                    <strong>Yayber Forum</strong>
+                    <br>
+                    <small>Diễn đàn thảo luận dành cho học sinh, sinh viên.</small>
+                    </p>
+                  </a>
+                  <a class="navbar-item">
+                    <p>
+                    <strong>Yayber Tuyển sinh</strong>
+                    <br>
+                    <small>Trang tuyển sinh với thông tin tuyển sinh được cập nhật nhanh từ các trường đại học.</small>
+                    </p>
+                  </a>
+                  <a class="navbar-item">
+                    <p>
+                    <strong>Thông tin và điều khoản</strong>
+                    <br>
+                    <small>Tìm hiểu thêm về Yayber.</small>
+                    </p>
+                  </a>
+                  <hr class="navbar-divider">
+                  <div class="navbar-item">
+                    Một sản phẩm của ??? Group
+                  </div>
+                </div>
+            </div>
       </div>
       
       <div id="navbar" class="navbar-menu">
@@ -39,22 +72,28 @@
           <!-- Dropdown START -->
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                  Docs
+                  Nhà tuyển dụng
                   </a>
                 <div class="navbar-dropdown">
                   <a class="navbar-item">
-                    Overview
+                    Hỏi đáp dành cho nhà tuyển dụng
                   </a>
                   <a class="navbar-item">
-                    Elements
+                    Liên hệ dành cho nhà tuyển dụng
+                  </a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Học sinh, sinh viên
+                  </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Hỏi đáp dành cho học sinh, sinh viên
                   </a>
                   <a class="navbar-item">
-                    Components
+                    Liên hệ dành cho học sinh, sinh viên
                   </a>
-                  <hr class="navbar-divider">
-                  <div class="navbar-item">
-                    Version 0.7.2
-                  </div>
                 </div>
             </div>
               <!-- Dropdown END -->
@@ -84,18 +123,22 @@
               <div class="navbar-item has-dropdown is-hoverable">
                 <!--<%= link_to 'Tài khoản', edit_user_registration_path, class: "navbar-link" %>-->
                 <a class="navbar-link">Tài khoản</a>
-                <div class="navbar-dropdown">
+                <div class="navbar-dropdown is-right">
                   <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class:"navbar-item" %>
                 </div>
               </div>
             <% else %>
-            <p class="control">
-              <%= link_to "Đăng nhập", new_user_session_path, class:"navbar-item" %>
-            </p>
-            <p class="control">
-              <%= link_to "Đăng ký", new_user_registration_path, class:"navbar-item" %>
-            </p>
+            <div class="navbar-item">
+              <p class="control">
+              <%= link_to "Đăng nhập", new_user_session_path, class: "button" %>
+              </p>
+            </div>
+            <div class="navbar-item">
+              <p class="control">
+              <%= link_to "Đăng ký", new_user_registration_path, class: "button" %>
+              </p>
+            </div>
             <% end %>
       </div>
     </div>
@@ -105,43 +148,32 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-3 is-offset-2">
-                        <h2><strong>Category</strong></h2>
+                        <h2><strong>Giới thiệu</strong></h2>
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                            <li><a href="#">Vestibulum errato isse</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                            <li><a href="#">Aisia caisia</a></li>
-                            <li><a href="#">Murphy's law</a></li>
-                            <li><a href="#">Flimsy Lavenrock</a></li>
-                            <li><a href="#">Maven Mousie Lavender</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Việc làm</a></li>
                         </ul>
                     </div>
                     <div class="column is-3">
-                        <h2><strong>Category</strong></h2>
+                         <h2><strong>Dịch vụ</strong></h2>
                         <ul>
-                            <li><a href="#">Labore et dolore magna aliqua</a></li>
-                            <li><a href="#">Kanban airis sum eschelor</a></li>
-                            <li><a href="#">Modular modern free</a></li>
-                            <li><a href="#">The king of clubs</a></li>
-                            <li><a href="#">The Discovery Dissipation</a></li>
-                            <li><a href="#">Course Correction</a></li>
-                            <li><a href="#">Better Angels</a></li>
+                            <li><a href="#">Yayber Forum</a></li>
+                            <li><a href="#">Yayber Tuyển sinh</a></li>
                         </ul>
                     </div>
                     <div class="column is-4">
-                        <h2><strong>Category</strong></h2>
+                        <h2><strong>Mạng xã hội</strong></h2>
                         <ul>
-                            <li><a href="#">Objects in space</a></li>
-                            <li><a href="#">Playing cards with coyote</a></li>
-                            <li><a href="#">Goodbye Yellow Brick Road</a></li>
-                            <li><a href="#">The Garden of Forking Paths</a></li>
-                            <li><a href="#">Future Shock</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">YouTube</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="content has-text-centered">
                   <p>
-                    © 2019-2020 Yayber All Rights Reserved
+                    © 2019 ??? Group All Rights Reserved
                     </p>
                 </div>
             </div>

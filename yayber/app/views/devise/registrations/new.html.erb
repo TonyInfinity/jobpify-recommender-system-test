@@ -1,15 +1,16 @@
-<div class="section" style="border-bottom:1px dashed #D3D3D3">
+<div class="section has-background-white-bis" style="border-bottom:1px dashed #D3D3D3">
   <div class="container">
   <div class="columns is-centered">
+  <div class="container has-text-centered">
+    <div class="column is-4 is-offset-4">
 
-    <div class="column is-4">
-
-    <h2 class="title is-2">Tham gia Yayber</h2>
-    <h2 class="subtitle is-4">Cổng kết nối học sinh, sinh viên với các cơ hội việc làm.</h2>
+    <h3 class="title has-text-grey">Tham gia Yayber</h3>
+    <p class="subtitle has-text-grey">Cổng kết nối học sinh, sinh viên với các cơ hội việc làm.</p>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
+<div class="box">
     <div class="field">
       <div class="control">
       <%= f.input :name, required: true, autofocus: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" }, label: "Tên tài khoản" %>
@@ -34,13 +35,11 @@
       </div>
     </div>
 
-    <div class="field">
-      <div class="control">
-        <%= f.button :submit, "Đăng ký", class:"button is-medium" %>
-      </div>
-    </div>
+        <%= f.button :submit, "Đăng ký", class:"button is-outlined is-medium" %>
 
+    </div>
     <% end %>
+    </div>
       <br />
       <%= render "devise/shared/links" %>
     </div>
