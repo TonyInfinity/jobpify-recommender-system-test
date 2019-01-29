@@ -22,3 +22,8 @@
   font-weight: bold;
   font-size: 9px !important;
 }
+
+.trix-content {
+  max-height: 1000px !important;
+  overflow-y: auto;
+}

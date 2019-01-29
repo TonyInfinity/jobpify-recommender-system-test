@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   has_many :jobs
   
-  JOB_TYPES = ["Full-time", "Part-time", "Contract", "Freelance"]
+  #JOB_TYPES = ["Full-time", "Part-time", "Contract", "Freelance"]
+  JOB_TYPES = ["Toàn thời gian", "Bán thời gian", "Hợp đồng", "Tự do", "Thực tập"]
 end
