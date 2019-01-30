@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
   
+  get '/forum' => 'pages#forum'
+  get '/students_faq' => 'pages#students_faq'
+  get '/recruiters_faq' => 'pages#recruiters_faq'
   #get '/search' => 'jobs#index' 
   
   # The priority is based upon order of creation: first created -> highest priority.
