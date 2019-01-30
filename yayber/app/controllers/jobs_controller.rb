@@ -9,11 +9,11 @@ class JobsController < ApplicationController
       @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
     elsif (params.has_key?(:location))
       @jobs = Job.where(location: params[:location]).order("created_at desc")
+    elsif (params.has_key?(:search))
+      @jobs = Job.search(params[:search])
     else
       @jobs = Job.all.order("created_at desc")
     end
-
-    #@search_jobs = Job.search(params[:search])
   end
 
   # GET /jobs/1
