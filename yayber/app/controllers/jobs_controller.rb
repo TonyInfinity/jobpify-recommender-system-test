@@ -7,12 +7,13 @@ class JobsController < ApplicationController
   def index
     if(params.has_key?(:job_type))
       @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
+    elsif (params.has_key?(:location))
+      @jobs = Job.where(location: params[:location]).order("created_at desc")
     else
       @jobs = Job.all.order("created_at desc")
     end
-    
-    @search_jobs = Job.search(params[:search])
-    #@search = Job.where(['title LIKE ?', "%#{params[:search]}%"])
+
+    #@search_jobs = Job.search(params[:search])
   end
 
   # GET /jobs/1
@@ -36,6 +37,7 @@ class JobsController < ApplicationController
     
     token = params[:stripeToken]
     job_type = params[:job_type]
+    location = params[:location]
     job_title = params[:title]
     card_brand = params[:user][:card_brand]
     card_exp_month = params[:user][:card_exp_month]
