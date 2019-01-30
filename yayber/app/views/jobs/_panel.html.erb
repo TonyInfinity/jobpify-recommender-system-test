@@ -15,19 +15,12 @@
     <%= link_to 'Hợp đồng', jobs_path(job_type: "Hợp đồng"), class: "panel-block" %>
     <%= link_to 'Thực tập', jobs_path(job_type: "Thực tập"), class: "panel-block" %>
 </nav>
-
-<div class="field">
-  <div class="control has-icons-left">
-    <div class="select is-fullwidth">
-      <select>
-        <option selected>Lọc vùng:</option>
-        <option>Bạc Liêu</option>
-        <option>Sóc Trăng</option>
-        <option>Cần Thơ</option>
-      </select>
-    </div>
-    <div class="icon is-small is-left">
-      <i class="fa fa-globe"></i>
-    </div>
-  </div>
+<div class="select is-multiple is-fullwidth">
+  <select multiple size="8" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+    <option value="/jobs">Tất cả</option>
+    <option value="?location=Bạc+Liêu">Bạc Liêu</option>
+    <option value="?location=Sóc+Trăng">Sóc Trăng</option>
+    <option value="?location=Cần+Thơ">Cần Thơ</option>
+  </select>
 </div>
+
