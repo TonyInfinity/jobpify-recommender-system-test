@@ -3,11 +3,10 @@ class Job < ActiveRecord::Base
     
     def self.search(search)
         if search
-            #find(:jobs, :conditions => ['title LIKE ?', "%#{search}%"])
-            where(['title LIKE ?',"%#{search}%"])
+            where(['title LIKE ? or description LIKE ?', "%#{search}%", "%#{search}%"])
         else
             all
         end
     end
-    
+
 end

@@ -15,18 +15,6 @@ module JobsHelper
             ""
         end
     end
-    
-    def location(location)
-        if location == "Bạc Liêu"
-            content_tag :span, "#{location}", class: "tag is-success"
-        elsif location == "Sóc Trăng"
-            content_tag :span, "#{location}", class: "tag is-link"
-        elsif location == "Cần Thơ"
-            content_tag :span, "#{location}", class: "tag is-warning"
-        else
-            ""
-        end
-    end
 
     def job_author(job) 
         user_signed_in? && current_user.id == job.user_id
