@@ -11,12 +11,6 @@ class JobsController < ApplicationController
       @jobs = Job.where(location: params[:location]).order("created_at desc")
     elsif (params.has_key?(:search))
       @jobs = Job.search(params[:search])
-    #elsif (params.has_key?(:search_title))
-      #@jobs = Job.search(params[:search_title])
-    #elsif (params.has_key?(:search_description))
-      #@jobs = Job.search(params[:search_description])
-    #elsif (params.has_key?(:search_author))
-      #@jobs = Job.search(params[:search_author])
       
     else
       @jobs = Job.all.order("created_at desc")
@@ -46,26 +40,24 @@ class JobsController < ApplicationController
     job_type = params[:job_type]
     location = params[:location]
     job_title = params[:title]
-    card_brand = params[:user][:card_brand]
-    card_exp_month = params[:user][:card_exp_month]
-    card_exp_year = params[:user][:card_exp_year]
-    card_last4 = params[:user][:card_last4]
+    #card_brand = params[:user][:card_brand]
+    #card_exp_month = params[:user][:card_exp_month]
+    #card_exp_year = params[:user][:card_exp_year]
+    #card_last4 = params[:user][:card_last4]
     
-    charge = Stripe::Charge.create(
-      :amount => 5000,
-      :currency => "usd",
-      :description => job_type,
-      :statement_descriptor => job_title,
-      :source => token
-      )
+    #charge = Stripe::Charge.create(
+    #  :amount => 5000,
+    #  :currency => "usd",
+    #  :description => job_type,
+    #  :statement_descriptor => job_title,
+    #  :source => token
+    #  )
       
-      current_user.stripe_id = charge.id
-      current_user.card_brand = card_brand
-      current_user.card_exp_month = card_exp_month
-      current_user.card_exp_year = card_exp_year
-      current_user.card_last4 = card_last4
-      #@job.valid?
-      #Rails.logger.info(@job.errors.full_messages.join(', '))
+      #current_user.stripe_id = charge.id
+      #current_user.card_brand = card_brand
+      #current_user.card_exp_month = card_exp_month
+      #current_user.card_exp_year = card_exp_year
+      #current_user.card_last4 = card_last4
       current_user.save
 
     respond_to do |format|

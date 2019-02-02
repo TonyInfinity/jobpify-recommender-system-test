@@ -10,17 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require trix
 //= require_tree .
-
-document.addEventListener('DOMContentLoaded', function() {
-	let cardToggles = document.getElementsByClassName('card-toggle');
-	for (let i = 0; i < cardToggles.length; i++) {
-		cardToggles[i].addEventListener('click', e => {
-			e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle('is-hidden');
-		});
-	}
-});

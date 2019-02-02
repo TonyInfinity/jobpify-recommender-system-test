@@ -13,8 +13,8 @@
     </div>
     <div class="content text-serif f4">
       <%= sanitize @job.description %>
-      <!-- <%= sanitize @job.description.html_safe %> -->
     </div>
+    <hr />
     <div class="control has-text-centered">
     <%= link_to 'Nộp đơn', @job.apply_url, class: "button is-danger is-large is-rounded mv4" %>
     </div>
