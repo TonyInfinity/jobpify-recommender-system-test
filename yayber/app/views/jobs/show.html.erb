@@ -28,14 +28,32 @@
     <% end %>
 
     <h5 class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></h5>
-
+    
+    <hr />
     <div class="mt2 mb4">
     <%= link_to @job.url do %>
-      <i class="fa fa-globe"> Đi đến Website</i>
+      <i class="fa fa-globe"> Đi đến Website ngoài</i>
     <% end %>
     </div>
-
+    
+    <a class="button is-small is-fullwidth" id="showModal">
+    <span>Về công ti</span>
+    <span class="icon is-small">
+      <i class="fa fa-info-circle"></i>
+    </span>
+    </a>
+    <hr />
+    
     <%= link_to 'Nộp đơn', @job.apply_url, class:"button is-rounded is-fullwidth" %>
+    
+    <hr />
+    
+    <a class="button is-small is-fullwidth">
+    <span>Phản ánh thông tin sai lệch</span>
+    <span class="icon is-small">
+      <i class="fa fa-times"></i>
+    </span>
+  </a>
 
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
@@ -48,5 +66,32 @@
           <%= link_to 'Xóa', @job, method: :delete, data: { confirm: 'Bạn có chắc là muốn xóa công việc này?' }, class: 'button is-small is-outlined' %></li>
       </ul>
     <% end %>
+
   </div>
 </div>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"><%= @job.job_author %></p>
+      <button class="delete" aria-label="close" id="closeModal"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      
+    </footer>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#showModal").click(function() {
+  $(".modal").addClass("is-active");  
+});
+
+$("#closeModal").click(function() {
+   $(".modal").removeClass("is-active");
+});
+</script>

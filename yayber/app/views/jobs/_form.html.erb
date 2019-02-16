@@ -92,8 +92,22 @@
       </div>
     </div>
     <%#= #render# 'payment' #%> 
+    
     <%= render 'gmaps' %>
+    
+    <div class="columns"><div class="field column"></div></div>
+    
+    <div class="columns">
+      <div class="field column">
+        <label class="checkbox">
+          <input type="checkbox">
+            Tôi đồng ý với <a href="#">điều khoản sử dụng và chính sách bảo mật</a>
+        </label>
+      </div>
+    </div>
+    
     <hr />
+    
     <div class="control has-text-centered">
       <%= f.submit "Đăng bài", class: "button is-danger is-large is-rounded mv4" %>
     </div>

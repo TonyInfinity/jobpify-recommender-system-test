@@ -38,5 +38,4 @@ document.addEventListener("turbolinks:load", function() {
   if (instrumentImage) {
     this.addEventListener('change', handleFileSelect, false);
   }
-
 });

@@ -15,9 +15,10 @@
     <%= link_to 'Hợp đồng', jobs_path(job_type: "Hợp đồng"), class: "panel-block" %>
     <%= link_to 'Thực tập', jobs_path(job_type: "Thực tập"), class: "panel-block" %>
 </nav>
+<nav class="panel">
 <div class="select is-multiple is-fullwidth">
-  <select multiple size="8" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
-    <option value="/jobs">Tất cả</option>
+  <select multiple size="17" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+    <!--<option value="/jobs">Tất cả</option-->
     <option value="?location=An+Giang">An Giang</option>
     <option value="?location=Bà+Rịa+Vũng+Tàu">Bà Rịa Vũng Tàu</option>
     <option value="?location=Bạc+Liêu">Bạc Liêu</option>
@@ -83,3 +84,4 @@
     <option value="?location=Hồ+Chí+Minh">Hồ CHí Minh</option>
   </select>
 </div>
+</nav>

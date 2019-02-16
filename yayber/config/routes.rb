@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/forum' => 'pages#forum'
   get '/students_faq' => 'pages#students_faq'
   get '/recruiters_faq' => 'pages#recruiters_faq'
+  get '/employer/dashboard' => 'pages#dashboard'
+  
   #get '/search' => 'jobs#index' 
   
   # The priority is based upon order of creation: first created -> highest priority.
