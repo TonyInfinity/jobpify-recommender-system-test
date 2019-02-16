@@ -1,7 +1,7 @@
 <div class="columns pt4 pb7 has-background-white-bis">
   <div class="column is-7 is-offset-1">
     <div class="box">
-    <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</p>
+    <p class="f7"><i class="fa fa-clock"></i> Được đăng <%= time_ago_in_words(@job.created_at) %> trước</p>
     <h1 class="title is-2"><%= @job.title %></h1>
 
     <div class="panel">
@@ -16,9 +16,24 @@
     </div>
     <hr />
     <div class="control has-text-centered">
-    <%= link_to 'Nộp đơn', @job.apply_url, class: "button is-danger is-large is-rounded mv4" %>
+    <%= link_to 'Ứng tuyển cho công việc này', @job.apply_url, class: "button is-danger is-large is-rounded mv4" %>
     </div>
   </div>
+  
+  <a class="button">
+    <span class="icon">
+      <i class="fa fa-facebook"></i>
+    </span>
+    <span>Chia sẻ công việc này trên Facebook</span>
+  </a>
+  
+  <a class="button">
+    <span class="icon">
+      <i class="fa fa-twitter"></i>
+    </span>
+    <span>Chia sẻ công việc này trên Twitter</span>
+  </a>
+  
   </div>
 
   <div class="column is-2 is-offset-1 has-text-centered" style="border:1px dashed #D3D3D3">
@@ -31,10 +46,10 @@
     
     <hr />
     <div class="mt2 mb4">
-    <%= link_to @job.url do %>
+    <!--<%= link_to @job.url do %>
       <i class="fa fa-globe"> Đi đến Website ngoài</i>
     <% end %>
-    </div>
+    </div>-->
     
     <a class="button is-small is-fullwidth" id="showModal">
     <span>Về công ti</span>
@@ -42,16 +57,24 @@
       <i class="fa fa-info-circle"></i>
     </span>
     </a>
+    <br>
+    <a class="button is-small is-fullwidth" id="showModal">
+    <span>Đi đến Website ngoài</span>
+    <span class="icon is-small">
+      <i class="fa fa-globe"></i>
+    </span>
+    </a>
+    </div>
     <hr />
     
-    <%= link_to 'Nộp đơn', @job.apply_url, class:"button is-rounded is-fullwidth" %>
+    <%= link_to 'Ứng tuyển', @job.apply_url, class:"button is-rounded is-fullwidth" %>
     
     <hr />
     
     <a class="button is-small is-fullwidth">
     <span>Phản ánh thông tin sai lệch</span>
     <span class="icon is-small">
-      <i class="fa fa-times"></i>
+      <i class="fa fa-exclamation-triangle"></i>
     </span>
   </a>
 
@@ -68,7 +91,7 @@
     <% end %>
 
   </div>
-</div>
+
 
 <div class="modal">
   <div class="modal-background"></div>

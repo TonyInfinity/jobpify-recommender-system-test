@@ -4,12 +4,12 @@
 <div class="box">
 <div class="field">
         <div class="control">
-        <%= f.input :title, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Tên công việc", placeholder: "" %>
+        <%= f.input :title, required: true, input_html: { class: "input is-hovered" }, wrapper: false, label_html: { class: "label" }, label: "Tên công việc", placeholder: "" %>
         </div>
       </div>
       <div class="field">
         <div class="control">
-          <%= f.input :apply_url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "URL đăng ký công việc", placeholder: ""  %>
+          <%= f.input :apply_url, required: true, input_html: { class: "input is-hovered" }, wrapper: false, label_html: { class: "label" }, label: "URL đăng ký công việc", placeholder: ""  %>
         </div>
       </div>
     <div class="columns">
@@ -62,12 +62,12 @@
     <div class="columns">
       <div class="field column">
         <div class="control">
-          <%= f.input :job_author, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Tên nhà tuyển dụng hoặc tổ chức" %>
+          <%= f.input :job_author, required: true, input_html: { class: "input is-hovered" }, wrapper: false, label_html: { class: "label" }, label: "Tên nhà tuyển dụng hoặc tổ chức" %>
         </div>
       </div>
       <div class="field column">
         <div class="control">
-          <%= f.input :url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Trang web, trang mạng xã hội", placeholder: "http://công-ty.com, http://www.fb.com/vidu" %>
+          <%= f.input :url, required: true, input_html: { class: "input is-hovered" }, wrapper: false, label_html: { class: "label" }, label: "Trang web, trang mạng xã hội", placeholder: "http://công-ty.com, http://www.fb.com/vidu" %>
         </div>
       </div>
     </div>
@@ -75,12 +75,12 @@
       <div class="field column is-4">
         <div class="control">
           <label class="label">Logo, ảnh (250x250)</label>
-          <div class="file">
+          <div class="file has-name is-fullwidth">
             <label class="file-label">
               <%= f.input :avatar, as: :file, required: false, input_html: { class:"file-input job-avatar" }, label: false, wrapper: false %>
                 <span class="file-cta">
                   <span class="file-icon"><i class="fa fa-upload"></i></span>
-                  <span class="file-label">Chọn tệp</span>
+                  <span class="file-label">Chọn tệp...</span>
                 </span>
             </label>
           </div>
@@ -101,7 +101,7 @@
       <div class="field column">
         <label class="checkbox">
           <input type="checkbox">
-            Tôi đồng ý với <a href="#">điều khoản sử dụng và chính sách bảo mật</a>
+            Tôi đồng ý với <a href="/term-of-services/">điều khoản sử dụng và chính sách bảo mật</a>
         </label>
       </div>
     </div>

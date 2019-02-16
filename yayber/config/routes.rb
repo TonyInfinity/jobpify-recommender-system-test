@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get '/forum' => 'pages#forum'
-  get '/students_faq' => 'pages#students_faq'
-  get '/recruiters_faq' => 'pages#recruiters_faq'
+  get '/students-faq' => 'pages#students-faq'
+  get '/recruiters-faq' => 'pages#recruiters-faq'
+  get '/term-of-services' => 'pages#term-of-services'
   get '/employer/dashboard' => 'pages#dashboard'
   
   #get '/search' => 'jobs#index' 
