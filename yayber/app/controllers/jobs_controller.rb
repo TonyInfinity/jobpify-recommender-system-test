@@ -30,6 +30,10 @@ class JobsController < ApplicationController
   # GET /jobs/1/edit
   def edit
   end
+  
+  def dashboard
+    @jobs = Job.all.order("created_at desc")
+  end
 
   # POST /jobs
   # POST /jobs.json

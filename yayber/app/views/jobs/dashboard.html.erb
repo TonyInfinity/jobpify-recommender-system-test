@@ -1,0 +1,67 @@
+<div class="box has-background-white-bis" style="border-radius:0">
+<div class="field">
+  <p class="title is-3 has-text-grey">Bảng điều khiển</p>
+  <p class="subtitle is-5 has-text-grey">Dành cho nhà tuyển dụng, chỉ bạn mới có thể truy cập trang này</p>
+
+<% @jobs.each do |job| %>
+<% if job_author(job) %>
+
+  <div class="control">
+  <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= link_to job.title, job %>
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+</div>
+</div>
+
+<% end %>
+<% end %>
+</div>
+
+<div class="field">
+<section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">439</p>
+                                <p class="subtitle">Đã xem thông tin công ty của bạn</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">59</p>
+                                <p class="subtitle">Đã xem bài đăng công việc của bạn</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">34</p>
+                                <p class="subtitle">Đã chuyển hướng tới website của bạn</p>
+                            </article>
+                        </div>
+                  </div>
+</section>
+</div>
+
+<div class="field">
+  <div class="control">
+    <textarea class="textarea is-hovered" rows="10" placeholder="Cung cấp thông tin về công ty/tổ chức của bạn..."></textarea>
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button">Cập nhật</button>
+  </div>
+  <div class="control">
+    <button class="button">Hủy</button>
+  </div>
+</div>
+</div>

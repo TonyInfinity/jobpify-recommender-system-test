@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/students-faq' => 'pages#students-faq'
   get '/recruiters-faq' => 'pages#recruiters-faq'
   get '/term-of-services' => 'pages#term-of-services'
-  get '/employer/dashboard' => 'pages#dashboard'
+  get '/employer/dashboard' => 'jobs#dashboard'
   
   #get '/search' => 'jobs#index' 
   
