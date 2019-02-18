@@ -31,7 +31,8 @@
       <div class="column is-8">
         <h3 class="title is-4 index-title"><%= link_to job.title, job %></h3>
           <ul>
-            <li><%= link_to job.job_author, job.url %></li>
+            <!--<li><%= link_to job.job_author, job.url %></li>-->
+            <li><p class="subtitle is-6 has-text-link"><%= job.job_author %></p></li>
           </ul>
         <div class="pv2 f6">
           <%= sanitize(job.description.truncate(200, separator: '</p>')) %>
@@ -45,6 +46,11 @@
               <%= link_to 'Chỉnh sửa', edit_job_path(job), class: 'button is-small is-outlined' %></li>
             <li class="inline-block">
               <%= link_to 'Xóa', job, method: :delete, data: { confirm: 'Bạn có chắc là muốn xóa công việc này?' }, class: 'button is-small is-outlined' %></li>
+            <li class="inline-block">
+              <%= link_to 'Mở trong tab mới', job, class: 'button is-small is-outlined', target: :_blank %></li>
+            <% else %> 
+            <li class="inline-block">
+              <%= link_to 'Mở trong tab mới', job, class: 'button is-small is-outlined', target: :_blank %></li>
           </ul>
         <% end %>
         </div>
