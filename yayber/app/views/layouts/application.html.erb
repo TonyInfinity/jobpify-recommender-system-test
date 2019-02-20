@@ -37,28 +37,21 @@
             <%= link_to root_path, class: "navbar-link" do %>
               <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
             <% end %>
-                <div class="navbar-dropdown" style="border-radius:0">
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="/jobpy-search/">
+                    <p>
+                    <strong>Jobpy Search</strong>
+                    <br>
+                    <small>Tìm kết quả đồng thời trên nhiều trang tìm việc khác nhau.</small>
+                    </p>
+                  </a>
                   <a class="navbar-item" href="/forum/">
                     <p>
-                    <strong>Diễn đàn Foren</strong>
+                    <strong>Jobpy CV Creator</strong>
                     <br>
-                    <small>Diễn đàn thảo luận dành cho học sinh, sinh viên.</small>
+                    <small>Tạo hồ sơ xin việc online một cách dễ dàng</small>
                     </p>
                   </a>
-                  <a class="navbar-item">
-                    <p>
-                    <strong>Yayber Tuyển sinh</strong>
-                    <br>
-                    <small>Trang tuyển sinh với thông tin tuyển sinh được cập nhật nhanh từ các trường đại học.</small>
-                    </p>
-                  </a>
-                  <!--<a class="navbar-item" href="/term-of-services/">
-                    <p>
-                    <strong>Thông tin và điều khoản dịch vụ</strong>
-                    <br>
-                    <small>Tìm hiểu thêm về Yayber.</small>
-                    </p>
-                  </a>-->
                   <hr class="navbar-divider">
                   <div class="navbar-item">
                     Một sản phẩm của ??? Group
@@ -118,7 +111,7 @@
             <% if user_signed_in? %>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Tài khoản</a>
-                <div class="navbar-dropdown is-right" style="border-radius:0">
+                <div class="navbar-dropdown is-right">
                   <%= link_to "Cập nhật tài khoản", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Bảng điều khiển", employer_dashboard_path, class: "navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "navbar-item" %>

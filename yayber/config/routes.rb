@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   get '/forum' => 'pages#forum'
   get '/students-faq' => 'pages#students-faq'
   get '/recruiters-faq' => 'pages#recruiters-faq'
-  get '/term-of-services' => 'pages#term-of-services'
+  get '/term-of-services' => 'pages#terms-of-service'
   get '/employer/dashboard' => 'jobs#dashboard'
+  get '/jobpy-search' => 'pages#jobpy-search'
   
   #get '/search' => 'jobs#index' 
   
