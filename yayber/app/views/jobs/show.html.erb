@@ -3,7 +3,6 @@
     <div class="box">
     <p class="f7"><i class="fa fa-clock"></i> Được đăng <%= time_ago_in_words(@job.created_at) %> trước</p>
     <h1 class="title is-2"><%= @job.title %></h1>
-
     <div class="panel">
       <li class="inline-block f6 pr2"><%= job_type(@job.job_type) %></li>
       <li class="inline-block f6 ph2"><i class="fa fa-pin"></i> <%= @job.location %></li>
@@ -19,8 +18,7 @@
     <%= link_to 'Ứng tuyển công việc này', @job.apply_url, class: "button is-danger is-large is-rounded mv4" %>
     </div>
   </div>
-  
-  <a class="button">
+  <a class="button" href="javascript:shareOnFacebook()">
     <span class="icon">
       <i class="fa fa-facebook"></i>
     </span>
@@ -32,26 +30,19 @@
     </span>
     <span>Chia sẻ công việc này trên Twitter</span>
   </a>
-  
-  <p>Clicks: <a id="clicks">0</a></p>
-  
+  <!--<p>Clicks: <a id="clicks">0</a></p>-->
   </div>
-
   <div class="column is-2 is-offset-1 has-text-centered" style="border:1px dashed #D3D3D3">
-
     <% if !@job.avatar.file.nil? %>
       <%= link_to image_tag(@job.avatar_url(:thumb), alt: @job.job_author, class: "has-text-centered"), @job.url %>
     <% end %>
-
     <h5 class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></h5>
-    
     <hr />
     <div class="mt2 mb4">
 <!--<%= link_to @job.url do %>
 <i class="fa fa-globe"> Đi đến Website ngoài</i>
 <% end %>
 </div>-->
-    
     <a class="button is-small is-fullwidth" id="showModal" onClick="CompanyInfoButtonClickCounter()">
     <span>Thông tin công ti</span>
     <span class="icon is-small">
@@ -59,23 +50,22 @@
     </span>
     </a>
     <br>
-    
-    <%= button_to "Chuyển hướng tới website", @job.url, class: "button is-small is-fullwidth", :method => :get %>
+    <a class="button is-small is-fullwidth" href="<%= @job.url %>">
+    <span>Chuyển hướng tới Website</span>
+    <span class="icon is-small">
+      <i class="fa fa-globe"></i>
+    </span>
+    </a>
     </div>
-    
     <hr />
-    
     <%= link_to 'Ứng tuyển', @job.apply_url, class: "button is-rounded is-fullwidth" %>
-    
     <hr />
-    
-    <a class="button is-small is-fullwidth">
+    <a class="button is-small is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
     <span>Phản ánh công việc</span>
     <span class="icon is-small">
       <i class="fa fa-exclamation-triangle"></i>
     </span>
   </a>
-
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
         <li class="pv1 f6">Quyền của người đăng: </li>
@@ -88,7 +78,6 @@
       </ul>
     <% end %>
   </div>
-
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-card">
@@ -98,13 +87,13 @@
     </header>
     <section class="modal-card-body">
       <!-- Content ... -->
+      <p id="companyDescP"></p>
     </section>
     <footer class="modal-card-foot">
       
     </footer>
   </div>
 </div>
-
 <script type="text/javascript">
   $("#showModal").click(function() {
   $(".modal").addClass("is-active");  

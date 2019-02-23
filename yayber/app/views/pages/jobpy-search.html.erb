@@ -1,22 +1,16 @@
-   <!--<input type="text" id='search'>
-   <input type="button" value='Search' onclick='searchValue()'>-->
-
 <section class="hero has-background-white-bis">
-
       <div class="hero-body">
-
         <div class="card">
           <div class="card-content has-text-centered">
             <form class="field">
                 <p class="subtitle is-3 has-text-grey" style="display:inline-block;vertical-align:middle">Jobpy Search</p>
-          <div class="control has-icons-left has-icons-right search-field">
-              <input class="input is-medium is-hovered" id="search" type="text" placeholder="Tìm theo tên" name="search" v-model="search" /><span class="icon is-medium is-left"><i class="fa fa-briefcase"></i></span>                  
+                  <div class="control has-icons-left has-icons-right search-field">
+              <input class="input is-medium is-hovered" id="search-box" type="text" placeholder="Tìm theo tên công việc" name="search" v-model="search" /><span class="icon is-medium is-left"><i class="fa fa-briefcase"></i></span>                  
               <span class="icon is-medium is-right">
-                    <i class="delete is-medium clear-search" onclick="document.getElementById('search').value = ''" v-if="search.length"></i>
+                    <i class="delete is-medium clear-search" onclick="document.getElementById('search-box').value = ''" v-if="search.length"></i>
               </span>
           </div>
           </form>
-
         <a class="button is-medium" onclick="searchValue()">
             <span>Tìm kiếm cùng Jobpy</span>
             <span class="icon">
@@ -26,25 +20,24 @@
           </div>
           </div>
       </div>
-    <p class="subtitle is-6 has-text-right" style="padding-right:10px;padding-bottom:5px"><i>Tìm kiếm trên 1092814 công việc</i></p>
+    <p class="subtitle is-6 has-text-right" style="padding-right:10px;padding-bottom:5px"><i>Tìm kiếm trên 1000000 công việc</i></p>
       </section>
-      
    <div class="box has-background-white-bis">
        <div class="list is-hoverable">
            <a class="list-item" href="#">
-               Liên hệ: jobpy.marketing@gmail.com để đưa quảng cáo/công việc bạn lên đây
+               Liên hệ jobpy.marketing@gmail.com để đưa quảng cáo/công việc của bạn lên đây
            </a> 
            <a class="list-item" href="#">
-               Liên hệ: jobpy.marketing@gmail.com để đưa quảng cáo/công việc bạn lên đây
+               Liên hệ jobpy.marketing@gmail.com để đưa quảng cáo/công việc của bạn lên đây
            </a> 
            <a class="list-item" href="#">
-               Liên hệ: jobpy.marketing@gmail.com để đưa quảng cáo/công việc bạn lên đây
+               Liên hệ jobpy.marketing@gmail.com để đưa quảng cáo/công việc của bạn lên đây
            </a> 
        </div>
        <div class="list is-hoverable" id="resultDiv">
+           <p id="noResult" style="display:none">HEY</p>
        </div>
    </div>
-
 <script>
 $.getJSON('search-engine.js');
 </script>

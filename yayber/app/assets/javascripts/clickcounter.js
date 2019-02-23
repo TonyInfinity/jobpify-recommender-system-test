@@ -1,5 +1,5 @@
 var clicks = 0;
-    function CompanyInfoButtonClickCounter() {
+function CompanyInfoButtonClickCounter() {
         clicks += 1;
         document.getElementById("clicks").innerHTML = clicks;
 };

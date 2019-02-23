@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def recruiters_faq
       
   end
+  
+  def jobpy_search
+
+  end
 end

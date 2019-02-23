@@ -1,11 +1,17 @@
 function searchValue() {
   let srchString = ''
-  var searchField = $('#search').val().trim();
-  let srchVal = data.filter(val => val.name.includes(searchField))
+  var searchField = $('#search-box').val().trim();
+  var searchFieldLower = searchField.toLowerCase();
+  //var shouldToggle = $('#search-box').text().toLowerCase().indexOf(searchFieldLower) >= 0;
+  //$('#search-box').toggle(shouldToggle);
+  let srchVal = data.filter(val => val.name.toLowerCase().includes(searchFieldLower))
   srchVal.forEach((item) => {
     srchString += `<a class="list-item" href="${item.url}">${item.name}</a>`
   })
   $('#resultDiv').empty().append(srchString)
+  if (srchVal == 0) {
+   alert("Không tìm thấy kết quả nào!");
+  }
 }
 let data = [
     {

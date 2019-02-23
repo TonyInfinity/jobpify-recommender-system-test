@@ -34,6 +34,8 @@ class JobsController < ApplicationController
   def dashboard
     @jobs = Job.all.order("created_at desc")
   end
+  
+  
 
   # POST /jobs
   # POST /jobs.json
