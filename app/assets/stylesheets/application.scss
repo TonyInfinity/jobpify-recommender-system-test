@@ -1,10 +1,46 @@
+// *= require trix
+
 @import "bulma";
 @import "functions";
+@import "jobs";
+@import "stripe";
 
 .notification {
   border-radius: 0;
 }
-
 .notification:not(:last-child) {
   margin-bottom: 0;
+}
+.hint {
+  font-size: small;
+}
+.tag {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 9px !important;
+}
+.trix-editor {
+  display: block;
+}
+.trix-content{
+    height: 500px;
+    overflow-y: auto;
+}
+.card+.card {
+	margin-top: 20px
+}
+.input {
+  border-radius: 0;
+}
+.box {
+  border-radius: 0;
+}
+.navbar-dropdown {
+  border-radius: 0;
+}
+.list {
+  border-radius: 0;
+}
+.trix-content {
+  border-radius: 0;
 }
