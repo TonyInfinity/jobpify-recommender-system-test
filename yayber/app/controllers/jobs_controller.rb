@@ -20,6 +20,8 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @jobs = Job.all.order("created_at desc")
+    @jobs_by_same_author = Job.where('job_author = ?', @job.job_author).order("created_at desc")
   end
 
   # GET /jobs/new
@@ -35,8 +37,6 @@ class JobsController < ApplicationController
     @jobs = Job.all.order("created_at desc")
   end
   
-  
-
   # POST /jobs
   # POST /jobs.json
   def create

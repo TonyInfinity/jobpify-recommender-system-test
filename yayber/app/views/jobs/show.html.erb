@@ -30,20 +30,26 @@
     </span>
     <span>Chia sẻ công việc này trên Twitter</span>
   </a>
+  <hr />
+  <div class="box">
+    <p class="subtitle is-5 has-text-grey">Cùng nhà tuyển dụng:</p>
+    <% @jobs_by_same_author.sort_by{|t| - t.created_at.to_i}.first(3).each do |job| %>
+      <%= link_to job.title, job, class: "button" %>
+    <% end %>
+    <div class="has-text-right">
+    <a id="showJobsModal" class="subtitle is-5 has-text-link"><i>Xem tất cả</i></a>
+    </div>
+  </div>
   <!--<p>Clicks: <a id="clicks">0</a></p>-->
   </div>
   <div class="column is-2 is-offset-1 has-text-centered" style="border:1px dashed #D3D3D3">
     <% if !@job.avatar.file.nil? %>
       <%= link_to image_tag(@job.avatar_url(:thumb), alt: @job.job_author, class: "has-text-centered"), @job.url %>
     <% end %>
-    <h5 class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></h5>
+    <p class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></p>
     <hr />
     <div class="mt2 mb4">
-<!--<%= link_to @job.url do %>
-<i class="fa fa-globe"> Đi đến Website ngoài</i>
-<% end %>
-</div>-->
-    <a class="button is-small is-fullwidth" id="showModal" onClick="CompanyInfoButtonClickCounter()">
+    <a class="button is-small is-fullwidth" id="showModal">
     <span>Thông tin công ti</span>
     <span class="icon is-small">
       <i class="fa fa-info-circle"></i>
@@ -51,7 +57,7 @@
     </a>
     <br>
     <a class="button is-small is-fullwidth" href="<%= @job.url %>">
-    <span>Chuyển hướng tới Website</span>
+    <span>Chuyển hướng tới website</span>
     <span class="icon is-small">
       <i class="fa fa-globe"></i>
     </span>
@@ -78,7 +84,7 @@
       </ul>
     <% end %>
   </div>
-<div class="modal">
+<div class="modal" id="infoModal">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
@@ -90,16 +96,43 @@
       <p id="companyDescP"></p>
     </section>
     <footer class="modal-card-foot">
-      
+    </footer>
+  </div>
+</div>
+<div class="modal" id="jobsModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Các công việc của <%= @job.job_author %></p>
+      <button class="delete" aria-label="close" id="closeJobsModal"></button>
+    </header>
+    <section class="modal-card-body">
+       <% @jobs_by_same_author.each do |job| %>
+        <div class="control">
+          <%= link_to job.title, job, class: "is-5" %>
+        </div>
+        <% end %>
+      <p id="companyDescP"></p>
+    </section>
+    <footer class="modal-card-foot">
     </footer>
   </div>
 </div>
 <script type="text/javascript">
   $("#showModal").click(function() {
-  $(".modal").addClass("is-active");  
+  $("#infoModal").addClass("is-active");  
 });
 
 $("#closeModal").click(function() {
    $(".modal").removeClass("is-active");
 });
+
+  $("#showJobsModal").click(function() {
+  $("#jobsModal").addClass("is-active");  
+});
+
+$("#closeJobsModal").click(function() {
+   $(".modal").removeClass("is-active");
+});
 </script>
+

@@ -23,17 +23,9 @@
     <% end %>
      <nav class="navbar has-background-white-ter" role="navigation" aria-label="main navigation"  style="border-bottom:1px dashed #D3D3D3">
       <div class="navbar-brand">
-        <!--
-        <%= link_to root_path, class:"navbar-item" do %>
-          <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
-        <% end  %>
-        <div class="navbar-burger burger" data-target="navbar">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>-->
         <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to root_path, class: "navbar-link" do %>
+            <img src="/images/logo_transparent_cropped.png" alt="rss feed" style="padding-right:5px" />
               <h1 class="title is-5"><%= Rails.configuration.application_name %></h1>
             <% end %>
                 <div class="navbar-dropdown">
