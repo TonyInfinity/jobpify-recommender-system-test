@@ -3,7 +3,13 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :jobs
   devise_for :users
-  root to: 'home#index'
+  
+  resources :conversations do
+    resources :messages
+  end
+  
+  root to: 'conversations#index'
+  #root to: 'home#index'
   
   get '/forum' => 'pages#forum'
   get '/students-faq' => 'pages#students-faq'
@@ -11,8 +17,6 @@ Rails.application.routes.draw do
   get '/terms-of-service' => 'pages#terms-of-service'
   get '/employer/dashboard' => 'jobs#dashboard'
   get '/jobpy-search' => 'pages#jobpy-search'
-  
-  #get '/search' => 'jobs#index' 
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

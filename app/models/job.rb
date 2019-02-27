@@ -8,5 +8,4 @@ class Job < ActiveRecord::Base
             all
         end
     end
-
 end

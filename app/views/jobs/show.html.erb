@@ -49,22 +49,22 @@
     <p class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></p>
     <hr />
     <div class="mt2 mb4">
+    <a class="button is-small is-fullwidth" href="<%= @job.url %>">
+    <span>Đi tới website</span>
+    <span class="icon is-small">
+      <i class="fa fa-globe"></i>
+    </span>
+    </a>
+    <br>
     <a class="button is-small is-fullwidth" id="showModal">
     <span>Thông tin công ti</span>
     <span class="icon is-small">
       <i class="fa fa-info-circle"></i>
     </span>
     </a>
-    <br>
-    <a class="button is-small is-fullwidth" href="<%= @job.url %>">
-    <span>Chuyển hướng tới website</span>
-    <span class="icon is-small">
-      <i class="fa fa-globe"></i>
-    </span>
-    </a>
     </div>
     <hr />
-    <%= link_to 'Ứng tuyển', @job.apply_url, class: "button is-rounded is-fullwidth" %>
+    <%= link_to 'Request an interview', @job.url, class: "button is-rounded is-fullwidth" %>
     <hr />
     <a class="button is-small is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
     <span>Phản ánh công việc</span>

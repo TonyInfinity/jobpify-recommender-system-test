@@ -5,6 +5,9 @@
 @import "jobs";
 @import "stripe";
 
+.has-background-cloud {
+  background-color: hsl(0, 0%, 95%);
+}
 .notification {
   border-radius: 0;
 }
