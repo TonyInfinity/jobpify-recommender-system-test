@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :messages
   end
   
-  root to: 'conversations#index'
-  #root to: 'home#index'
+  #root to: 'conversations#index'
+  root to: 'home#index'
   
   get '/forum' => 'pages#forum'
   get '/students-faq' => 'pages#students-faq'

@@ -11,7 +11,6 @@ class JobsController < ApplicationController
       @jobs = Job.where(location: params[:location]).order("created_at desc")
     elsif (params.has_key?(:search))
       @jobs = Job.search(params[:search])
-      
     else
       @jobs = Job.all.order("created_at desc")
     end
