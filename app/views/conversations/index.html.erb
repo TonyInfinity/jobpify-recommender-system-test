@@ -1,6 +1,7 @@
 <section class="hero has-background-white-bis">
 <section class="hero-body has-background-white-bis">
 <h2 class="title has-text-grey">Tất cả cuộc phỏng vấn:</h2>
+<div class="box">
       <% @conversations.each do |conversation| %>
       <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
        <% if conversation.sender_id == current_user.id %>
@@ -8,10 +9,12 @@
        <% else %>
          <% recipient = User.find(conversation.sender_id) %>
        <% end %>
-        <div class="box">
-           <%= link_to recipient.name, conversation_messages_path(conversation), class: "title is-5 has-text-link" %>
-        </div>
+        
+       <%= link_to recipient.name, conversation_messages_path(conversation), class: "title is-5 has-text-link" %>
+
       <% end %>
      <% end %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </section>
 </section>

@@ -18,17 +18,17 @@
     <%= link_to 'Ứng tuyển công việc này', @job.apply_url, class: "button is-danger is-large is-rounded mv4" %>
     </div>
   </div>
+  <a class="button">
+    <span class="icon">
+      <i class="fa fa-bookmark"></i>
+    </span>
+    <span>Lưu công việc này vào thư viện</span>
+  </a>
   <a class="button" href="javascript:shareOnFacebook()">
     <span class="icon">
       <i class="fa fa-facebook"></i>
     </span>
     <span>Chia sẻ công việc này trên Facebook</span>
-  </a>
-  <a class="button">
-    <span class="icon">
-      <i class="fa fa-twitter"></i>
-    </span>
-    <span>Chia sẻ công việc này trên Twitter</span>
   </a>
   <hr />
   <div class="box">
@@ -40,7 +40,6 @@
     <a id="showJobsModal" class="subtitle is-5 has-text-link"><i>Xem tất cả</i></a>
     </div>
   </div>
-  <!--<p>Clicks: <a id="clicks">0</a></p>-->
   </div>
   <div class="column is-2 is-offset-1 has-text-centered" style="border:1px dashed #D3D3D3">
     <% if !@job.avatar.file.nil? %>
@@ -67,7 +66,7 @@
     <%= link_to 'Gửi CV', @job.url, class: "button is-rounded is-fullwidth" %>
 
     <!--<a class="button is-rounded is-fullwidth" href="">Gửi CV</a>-->
-    
+
     <hr />
     <a class="button is-small is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
     <span>Phản ánh công việc</span>
@@ -138,4 +137,3 @@ $("#closeJobsModal").click(function() {
    $(".modal").removeClass("is-active");
 });
 </script>
-

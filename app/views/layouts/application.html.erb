@@ -84,35 +84,61 @@
               </a>
         </div>
         <div class="navbar-end">
-          <div class="navbar-item">
+            <% if user_signed_in? %>
+            <% if current_user.employer? %>
+            <div class="navbar-item">
               <p class="control">
                 <%= link_to "Đăng việc mới", new_job_path, class: "navbar-item button is-rounded" %>
               </p>
-          </div>
-            <% if user_signed_in? %>
-            <% if current_user.employer? %>
-            <a class="navbar-item" href="/conversations/">
+            </div>
+            <div class="navbar-item">
+              <p class="control">
+              <a class="navbar-item button" href="/conversations/">
                 Phỏng vấn
               </a>
+              </p>
+              </div>
+              <div class="navbar-item">
+              <p class="control">
+              <a class="navbar-item button" href="/quick-recruit/">
+                Tuyển nhanh
+              </a>
+              </p>
+              </div>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Tài khoản</a>
                 <div class="navbar-dropdown is-right">
-                  <%= link_to "Cập nhật tài khoản", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Bảng điều khiển", employer_dashboard_path, class: "navbar-item" %>
+                  <%= link_to "Cài đặt tài khoản", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "navbar-item" %>
                 </div>
               </div>
               <% else %>
+              <div class="navbar-item">
+              <p class="control">
+                <a class="navbar-item button is-rounded" href="/foren/">Diễn đàn thảo luận</a>
+              </p>
+              </div>
+              <div class="navbar-item">
+              <p class="control">
+                <a class="navbar-item button" href="/recommended-jobs/">Khuyến nghị</a>
+              </p>
+              </div>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Tài khoản</a>
                 <div class="navbar-dropdown is-right">
-                  <%= link_to "Cập nhật tài khoản", edit_user_registration_path, class: "navbar-item" %>
-                  <%= link_to "Bảng điều khiển", employer_dashboard_path, class: "navbar-item" %>
+                  <%= link_to "Thư viện", edit_user_registration_path, class: "navbar-item" %>
+                  <%= link_to "Cài đặt tài khoản", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "navbar-item" %>
                 </div>
               </div>
               <% end %>
             <% else %>
+            <div class="navbar-item">
+              <p class="control">
+                <%= link_to "Đăng việc mới", new_user_session_path, class: "navbar-item button is-rounded" %>
+              </p>
+          </div>
             <div class="navbar-item">
               <p class="control">
               <%= link_to "Đăng nhập", new_user_session_path, class: "button" %>
