@@ -31,7 +31,6 @@
       <div class="column is-8">
         <h3 class="title is-4 index-title"><%= link_to job.title, job %></h3>
           <ul>
-            <!--<li><%= link_to job.job_author, job.url %></li>-->
             <li><p class="subtitle is-6 has-text-link"><%= job.job_author %></p></li>
           </ul>
         <div class="pv2 f6">
@@ -56,7 +55,8 @@
         </div>
         <div class="column has-text-right">
           <%= job_type(job.job_type) %>
-          <p class="pt2 f6"><%= job.location %></p>
+          <p class="pt2 f6"><i class="fa fa-map-marker"></i> <%= job.location %></p>
+          <p class="pt2 f6"><i class="fa fa-calendar"></i> <%= job.job_deadline.to_date %></p>
         </div>
       </div>
     <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190228140243) do
+ActiveRecord::Schema.define(version: 20190302121340) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -29,10 +29,11 @@ ActiveRecord::Schema.define(version: 20190228140243) do
     t.string   "job_author"
     t.boolean  "remote_ok"
     t.string   "apply_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "avatar"
     t.integer  "user_id"
+    t.datetime "job_deadline"
   end
 
   create_table "messages", force: :cascade do |t|

@@ -1,11 +1,13 @@
 <div class="columns pt4 pb7 has-background-white-bis">
   <div class="column is-7 is-offset-1">
     <div class="box">
-    <p class="f7"><i class="fa fa-clock"></i> Được đăng <%= time_ago_in_words(@job.created_at) %> trước</p>
+    <!--<p class="f7"><i class="fa fa-clock"></i> Được đăng <%= time_ago_in_words(@job.created_at) %> trước</p>-->
+    <p class="f7"><i class="fa fa-clock"></i> Được đăng vào ngày <%= @job.created_at.strftime("%d-%m-%Y") %></p>
     <h1 class="title is-2"><%= @job.title %></h1>
     <div class="panel">
       <li class="inline-block f6 pr2"><%= job_type(@job.job_type) %></li>
-      <li class="inline-block f6 ph2"><i class="fa fa-pin"></i> <%= @job.location %></li>
+      <li class="inline-block f6 pr2"><i class="fa fa-calendar"></i> Hạn chót ứng tuyển: <%= @job.job_deadline.to_date %></li>
+      <li class="inline-block f6 ph2"><i class="fa fa-map-marker"></i> Khu vực: <%= @job.location %></li>
       <% if @job.remote_ok? %>
         <li class="inline-block f6 ph2"><i class="fa fa-wifi"></i> Công việc có thể làm từ mọi nơi</li>
       <% end %>
@@ -34,7 +36,7 @@
   <div class="box">
     <p class="subtitle is-5 has-text-grey">Cùng nhà tuyển dụng:</p>
     <% @jobs_by_same_author.sort_by{|t| - t.created_at.to_i}.first(3).each do |job| %>
-      <%= link_to job.title, job, class: "button" %>
+      <%= link_to job.title, job, class: "button is-text" %>
     <% end %>
     <div class="has-text-right">
     <a id="showJobsModal" class="subtitle is-5 has-text-link"><i>Xem tất cả</i></a>

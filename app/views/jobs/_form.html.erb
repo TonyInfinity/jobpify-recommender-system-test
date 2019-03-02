@@ -68,16 +68,26 @@
         </div>
       </div>
     </div>
+    <!-- WIP -->
+    <div class="columns">
+      <div class="field column">
+        <div class="control">
+          <%= f.label "Hạn chót ứng tuyển", class: "label", wrapper: false, required: true %>
+          <%= f.date_select :job_deadline, {order: [:day, :month, :year], prompt: { day: 'Chọn ngày', month: 'Chọn tháng', year: 'Chọn năm' }, start_year: Date.today.year, end_year: Date.today.year + 25}, {class: "select is-hovered", required: true}  %>
+        </div>
+      </div>
+    </div>
+    <!-- WIP -->
     <div class="columns">
       <div class="field column is-4">
         <div class="control">
-          <label class="label">Logo (250x250)</label>
+          <%= f.label "Logo (.png, .jpg)", required: true, class: "label"%>
           <div class="file has-name is-fullwidth">
             <label class="file-label">
               <%= f.input :avatar, as: :file, required: true, input_html: { class: "file-input job-avatar" }, label: false, wrapper: false %>
                 <span class="file-cta">
                   <span class="file-icon"><i class="fa fa-upload"></i></span>
-                  <span class="file-label">Chọn tệp...</span>
+                  <span class="file-label">Chọn tệp ...</span>
                 </span>
             </label>
           </div>
@@ -94,7 +104,7 @@
       <div class="field column">
         <label class="checkbox">
           <input type="checkbox" checked>
-            Tôi đồng ý với <a href="/terms-of-service/">điều khoản dịch vụ và chính sách bảo mật</a> của Jobpy
+            Tôi đồng ý với <a href="/terms-of-service/">điều khoản dịch vụ và chính sách bảo mật</a> của Jobpify
         </label>
       </div>
     </div>
