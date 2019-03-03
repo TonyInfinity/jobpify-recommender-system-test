@@ -88,23 +88,11 @@
             <% if current_user.employer? %>
             <div class="navbar-item">
               <p class="control">
-                <%= link_to "Đăng việc mới", new_job_path, class: "navbar-item button is-rounded" %>
+                <%= link_to "Đăng bài tuyển dụng mới", new_job_path, class: "navbar-item button is-rounded" %>
               </p>
             </div>
-            <div class="navbar-item">
-              <p class="control">
-              <a class="navbar-item button" href="/conversations/">
-                Phỏng vấn
-              </a>
-              </p>
-              </div>
-              <div class="navbar-item">
-              <p class="control">
-              <a class="navbar-item button" href="/quick-recruit/">
-                Tuyển nhanh
-              </a>
-              </p>
-              </div>
+              <a class="navbar-item" href="/conversations/">Phỏng vấn</a>
+              <a class="navbar-item" href="/quick-recruit/">Tuyển nhanh</a>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Tài khoản</a>
                 <div class="navbar-dropdown is-right">
@@ -116,18 +104,15 @@
               <% else %>
               <div class="navbar-item">
               <p class="control">
-                <a class="navbar-item button is-rounded" href="/foren/">Diễn đàn thảo luận</a>
+                <a class="navbar-item button is-rounded" href="/foren/">Đặt câu hỏi</a>
               </p>
               </div>
-              <div class="navbar-item">
-              <p class="control">
-                <a class="navbar-item button" href="/recommended-jobs/">Khuyến nghị</a>
-              </p>
-              </div>
+              <a class="navbar-item" href="/library/">Thư viện</a>
+              <a class="navbar-item" href="/recommender-system/">Đề xuất cho bạn</a>
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">Tài khoản</a>
                 <div class="navbar-dropdown is-right">
-                  <%= link_to "Thư viện", edit_user_registration_path, class: "navbar-item" %>
+                  <%= link_to "Hồ sơ xin việc", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Cài đặt tài khoản", edit_user_registration_path, class: "navbar-item" %>
                   <%= link_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "navbar-item" %>
                 </div>
@@ -136,7 +121,7 @@
             <% else %>
             <div class="navbar-item">
               <p class="control">
-                <%= link_to "Đăng việc mới", new_user_session_path, class: "navbar-item button is-rounded" %>
+                <%= link_to "Đăng bài tuyển dụng mới", new_user_session_path, class: "navbar-item button is-rounded" %>
               </p>
           </div>
             <div class="navbar-item">
