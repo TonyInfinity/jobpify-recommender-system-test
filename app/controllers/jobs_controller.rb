@@ -2,8 +2,6 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /jobs
-  # GET /jobs.json
   def index
     if(params.has_key?(:job_type))
       @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
@@ -16,32 +14,29 @@ class JobsController < ApplicationController
     end
   end
 
-  # GET /jobs/1
-  # GET /jobs/1.json
   def show
     @jobs = Job.all.order("created_at desc")
     @jobs_by_same_author = Job.where('job_author = ?', @job.job_author).order("created_at desc")
   end
 
-  # GET /jobs/new
   def new
     @job = current_user.jobs.build
+    redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
   end
 
-  # GET /jobs/1/edit
   def edit
+    redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
   end
   
   def dashboard
     @jobs = Job.all.order("created_at desc")
+    redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
   end
   
-  # POST /jobs
-  # POST /jobs.json
   def create
     @job = current_user.jobs.build(job_params)
     
-    token = params[:stripeToken]
+    #token = params[:stripeToken]
     job_type = params[:job_type]
     location = params[:location]
     job_title = params[:title]
@@ -67,7 +62,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Bạn đã thanh toán hoàn tất, công việc của bạn sẽ được hiện thị trên trang chủ của Yayber.' }
+        format.html { redirect_to @job, notice: 'Bạn đã đăng đăng tin tuyển dụng hoàn tất, công việc của bạn sẽ được hiện thị trên trang chủ của Yayber.' }
         format.json { render :show, status: :created, location: @job }
       else
         flash.alert = @job.errrors.full_messages.join(', ')
@@ -81,9 +76,8 @@ class JobsController < ApplicationController
       render action: :new
   end
 
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
   def update
+    redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to @job, notice: 'Công việc đã cập nhật hoàn tất!' }
@@ -95,9 +89,8 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
   def destroy
+    redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Công việc đã xóa hoàn tất!' }
